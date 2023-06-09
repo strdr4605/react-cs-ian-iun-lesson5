@@ -1,0 +1,16 @@
+.container {
+  border-radius: 0.5rem;
+  background-color: cyan;
+  border: 1px solid black;
+  padding: 1rem;
+}
+
+.button {
+  cursor: pointer;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  background-color: blue;
+  color: white;
+  border: 1px solid black;
+  padding: 1rem;
+}

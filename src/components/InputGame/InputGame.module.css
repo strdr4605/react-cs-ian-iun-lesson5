@@ -1,0 +1,14 @@
+.container {
+  border-radius: 0.5rem;
+  background-color: green;
+  border: 1px solid black;
+  padding: 1rem;
+}
+
+.warn {
+  color: yellow;
+}
+
+.lost {
+  color: red;
+}

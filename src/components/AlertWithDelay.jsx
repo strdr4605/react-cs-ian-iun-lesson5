@@ -1,15 +1,31 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function AlertWithDelay() {
-  const [delay, setDelay] = useState("0");
+  const [delay, setDelay] = useState("4");
+  const [startAlert, setStartAlert] = useState(false);
 
   const handleOnClick = () => {
-    setTimeout(() => alert(`I alert you after ${delay} seconds`), delay * 1000);
+    setStartAlert(true);
   };
 
   const handleOnChange = (event) => {
     setDelay(event.target.value);
   };
+
+  useEffect(() => {
+    let timerId;
+
+    if (startAlert) {
+      timerId = setTimeout(
+        () => alert(`I alert you after ${delay} seconds`),
+        delay * 1000
+      );
+    }
+
+    return () => {
+      clearTimeout(timerId);
+    };
+  }, [delay, startAlert]);
 
   return (
     <div
